@@ -1,0 +1,39 @@
+curl -X POST \
+  "http://127.0.0.1:7860/api/v1/run/93a1393b-8ef6-4dec-888c-b5b282348172?stream=false" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input_value": "message",
+    "output_type": "chat",
+    "input_type": "chat",
+    "tweaks": {
+      "ChatInput-K2KMk": {
+        "files": "",
+        "input_value": "Hello",
+        "sender": "User",
+        "sender_name": "User",
+        "session_id": "History",
+        "should_store_message": true
+      },
+      "ChatOutput-Mf7jU": {
+        "data_template": "{text}",
+        "input_value": "",
+        "sender": "Machine",
+        "sender_name": "BajajBot",
+        "session_id": "History",
+        "should_store_message": true
+      },
+      "Prompt-yoKIa": {
+        "template": "Context:\n{context}\n\nChat History:\n{chat_history}\n\nYou are a Bajaj Smart AI chatbot, provide assistance to the user regarding the query.\nYou are a very understanding chatbot.\nUse the provided context for answering the question. If the answer does not exist in the context, then respond with \"Well, I am Sorry, I am not aware of this.\"\n\nQuestion:\n{question}",
+        "question": "What is AI?",
+        "context": "",
+        "chat_history": ""
+      },
+      "Chroma-32s7h": {
+        "allow_duplicates": false,
+        "collection_name": "Bajaj1",
+        "persist_directory": "C:\\Users\\ha\\Downloads\\Langflow\\chroma\\Bajaj",
+        "number_of_results": 10,
+        "search_type": "Similarity"
+      }
+    }
+  }'
